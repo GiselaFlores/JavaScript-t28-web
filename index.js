@@ -1,4 +1,4 @@
-console.log("Hola mundo JavaScript");
+/*console.log("Hola mundo JavaScript");
 
 //Variables
 
@@ -72,4 +72,112 @@ let dato = num >= 12 ? "correcto" : "incorrecto";
 console.log(dato);
 
 let datos = num >= 12 ? console.log("correcto") : console.log("incorrecto");
+
+//Switch
+let nota = parseInt(prompt("Ingrese su nota: "));
+
+switch(nota){
+    case 10:
+        calificacion = "sobresaliente";
+        break;
+    case 9:
+    case 8:
+        calificacion = "Buen examen";
+        break;
+    case 7:
+    case 6:
+        calificacion = "buena";
+        break;
+    case 5:
+    case 4:
+    case 3:
+    case 2:
+    case 1:
+        calificacion = "estudia mas para la proxima";
+        break;
+    default:
+        calificacion = "nota es erronea";
+        break;
+}
+
+console.log("Tu estado de calificación es: ", calificacion);
+document.write(calificacion);
+
+//Bucles
+
+for(let i=30; i>=1; i--){
+    console.log(i);
+}
+*/
+//while
+let i=0;
+
+while(i < 5){
+    console.log("valor de i: ", i);
+    i++;
+}
+
+let nota = 0;
+/*
+do{
+    let nota = parseInt(prompt("Ingrese su nota: "));
+    console.log(nota);
+}
+while(nota<1 || nota>10);
+
+
+do{
+    console.log("valor de i: ", i);
+    i++;
+}
+while(i < 5);
+
+//console.log(nota);
+*/
+//funciones
+
+let notaTres = 8;
+
+//declaración
+function promedio(nota, notaDos){
+    console.log((nota + notaDos)/2);
+}
+
+//llamar
+promedio(10, 8);
+promedio(8, 2);
+promedio(notaTres, 7);
+
+//return
+
+//declaración
+function promedioDos(nota, notaDos){
+   return (nota + notaDos)/2;
+}
+
+//llamar
+
+let promedioNota = promedioDos(10, 8);
+promedioNota *= 2;
+console.log(promedioNota);
+
+
+//ejemplo: tabla de multiplicar
+
+//que aparezca toda la tabla con el formato 5 x 1 = 5
+
+function tablaMultiplicar(tabla, hasta) {
+    let sumatoria = 0;
+
+    for(let i=1; i <=hasta; i++){
+        console.log(tabla + " x " + i + " = ", tabla*i);
+        sumatoria += tabla*i; 
+    }
+    return sumatoria;
+}
+
+let resultado = tablaMultiplicar(5, 10);
+console.log(resultado);
+let resultadoDos = tablaMultiplicar(9, 15);
+console.log(resultadoDos);
 
