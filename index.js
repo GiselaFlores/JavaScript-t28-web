@@ -161,6 +161,58 @@ let promedioNota = promedioDos(10, 8);
 promedioNota *= 2;
 console.log(promedioNota);
 
+let promedioNota2 = promedioDos(notaa, notaaa);
+promedioNota *= 2;
+console.log(promedioNota(5, 20));
+
+// arrow function - función flecha
+
+// declaración
+let cuadrado = x => x*x;
+
+let rectangulo = (x, y) => {
+    area = x*y;
+    return area;
+};
+
+//llamado
+console.log("el área del cuadrado es: ", cuadrado(2));
+
+console.log("el área del rectangulo es: ", rectangulo(2, 5));
+
+//Resumidas
+
+function (a) { 
+    return a + 100;
+}
+
+(a) => {return a+100;}
+
+(a) => a + 100;
+
+a => a + 100;
+
+// función anónima
+
+const saludo = function () {
+    return "hola";
+}
+
+// callback
+
+function saludar(nombre){
+    alert("Hola" + nombre);
+}
+
+
+function saludoUsu(callback, callback2, nota){
+    let nombre = prompt("Ingrese su nombre: ");
+    callback(nombre);
+    callback2(nota);
+}
+
+saludoUsu(saludar, edad, nota);
+
 
 //ejemplo: tabla de multiplicar
 
