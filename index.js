@@ -108,7 +108,7 @@ document.write(calificacion);
 for(let i=30; i>=1; i--){
     console.log(i);
 }
-*/
+
 //while
 let i=0;
 
@@ -133,7 +133,7 @@ do{
 while(i < 5);
 
 //console.log(nota);
-*/
+
 //funciones
 
 let notaTres = 8;
@@ -232,4 +232,157 @@ let resultado = tablaMultiplicar(5, 10);
 console.log(resultado);
 let resultadoDos = tablaMultiplicar(9, 15);
 console.log(resultadoDos);
+*/
+
+//Objetos
+
+let nombreUsuario = new String("hola Paula");
+
+let nombreUsuarioDos = "Hola jacinto";
+
+let usuario = new Object();
+
+usuario.nombre = "Pedro";
+usuario.edad = 45;
+
+console.log("El nombre de usuario es: ", usuario.nombre, ". Su edad es de: ", usuario.edad);
+
+console.log({nombreUsuarioDos});
+
+let usu = {
+    nombre: "Jacinta",
+    edad: 45,
+    nacionalidad: "Argenta",
+    dniGenero: function(){
+        return this.nombre + "No binario"
+    },
+    quienSoy() {return "Soy " + this.nombre}
+}
+
+console.log(usu.nombre);
+console.log(usu.dniGenero());
+
+usu['nacionalidad'] = "Argentina";
+console.log(usu.nacionalidad);
+
+console.log(usu.quienSoy());
+
+//clases constructor
+
+class Animal {
+    constructor(nombre, tipo, edad){
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.edad = edad;    
+    }
+}
+
+let perro = new Animal("Firulais", "pepe", 8);
+
+perro.nombre = "pichichus";
+perro.edad = 10;
+
+//función constructora
+
+function Animalito(nombre, tipo, edad){
+    this.nombre = nombre;
+    this.tipo = tipo;
+    this.edad = edad;       
+}
+
+let gato = new Animalito("Chocolate", "siames", 5);
+let pez = new Animalito("Dory", "koi", 1);
+
+// métodos
+
+//let nombreUsuario = new String("hola Paula");
+
+let puntoLength = nombreUsuario.length;
+console.log("La cantidad de caracteres del String es de: ", nombreUsuario.length);
+
+let charAt = nombreUsuario.charAt("P");
+
+let concat = nombreUsuario.concat(perro.nombre, gato.nombre, "hola");
+
+let indexOf = nombreUsuario.indexOf("P", 2);
+
+let lastIndexOf = nombreUsuario.lastIndexOf("P", 2);
+
+nombreUsuario.toLowerCase();
+nombreUsuario.toUpperCase();
+nombreUsuario.repeat(5);
+nombreUsuario.trim();// saca los espacios laterales " Hola " "Hola"
+//nombreUsuario.replace(,);
+nombreUsuario.substring(4, 8);
+
+console.log("hola" + gato.nombre);
+document.write(`<h1> hola ${usu.dniGenero()} </h1>`); //alt 96
+
+//objetos Math
+
+Math.abs(-5);
+Math.max(1, 20, 50, 6);
+Math.min(1, 20, 50, 6);
+Math.pow(2, 10);
+Math.sqrt(2);
+Math.random(); // un número aleatorio [0, 1)
+Math.round(); // -3.75 / -4
+Math.floor(); // 3.75 / 3.25 - 3
+Math.ceil(); // 3.75 / 3.25 - 4
+Math.trunc(); // 3.75 / 3
+
+
+// Crear objetos de tipo Usuario con datos ingresados por el usuario
+
+// 1 Ingreso de datos string nombre, apellido, dni, mail, fecha_nacimiento
+
+let nombre = prompt("Ingrese su nombre:");
+let apellido = prompt("Ingrese su apellido:");
+let dni = prompt("Ingrese su dni:");
+let mail = prompt("Ingrese su mail:");
+let fechaN = prompt("Ingrese su fechaN:");
+
+// 2 Armar la estructura de creación del objeto
+
+function usuarioObj(nombre, apellido, dni, mail, fechaN){
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.dni = dni;  
+    this.mail = mail; 
+    this.fechaN = fechaN;      
+}
+
+let usuarioUno = new usuarioObj(nombre, apellido, dni, mail, fechaN);
+
+// 3 Mostrar al usuario la información por la web de su registro
+
+document.write(`
+        <h1 class="mt-5 text-center" > Datos ingresados del registro: </h1>
+
+            <div class="tablaDatos">
+                <table>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Dato ingresado</th>
+                    </tr>
+
+                    <tr>
+                        <td>Nombre:</td>
+                        <td>Apellido:</td>
+                        <td>Dni:</td>
+                        <td>Mail:</td>
+                        <td>Fecha de Nacimiento:</td>
+                    </tr>
+
+                    <tr>
+                        <td>${usuarioUno.nombre}</td>
+                        <td>${usuarioUno.apellido}</td>
+                        <td>${usuarioUno.dni}</td>
+                        <td>${usuarioUno.mail}</td>
+                        <td>${usuarioUno.fechaN}</td>
+                    </tr>
+                </table>
+            </div>
+    
+    `);
 
