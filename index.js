@@ -232,7 +232,7 @@ let resultado = tablaMultiplicar(5, 10);
 console.log(resultado);
 let resultadoDos = tablaMultiplicar(9, 15);
 console.log(resultadoDos);
-*/
+
 
 //Objetos
 
@@ -385,4 +385,118 @@ document.write(`
             </div>
     
     `);
+
+*/
+
+// ARRAYS
+
+const array = new Array("a", 5, "hola", 120, true);
+
+console.log(array[2]);
+
+
+const frutas = ["manzana", "frutilla", "naranja", "banana", "pera"];
+
+const verduras = [];
+
+verduras[0] = "papa";
+verduras[1] = "zapallo";
+verduras[2] = "tomate";
+
+console.log(verduras[2]);
+
+console.log(frutas.length); //cantidad de elementos
+
+console.log(frutas.length -1); // cantidad de posiciones
+
+console.log("verduras: ", verduras);
+
+// recorrer el array
+
+for(i = 0; i < frutas.length; i++){
+    console.log(frutas[i]);
+}
+
+frutas.forEach(fruti => console.log(fruti));
+
+// métodos
+
+frutas.push("kiwi");
+console.log(frutas);
+
+let eliminado = frutas.pop(); // elimina el último y devuelve ese eliminado
+
+let tamano = frutas.unshift("frutilla", "arándanos", "durazno", "uvas"); //agrega al inicio y devuelve cantidad de elementos, tamaño del array
+console.log(frutas);
+
+let primero = frutas.shift(); // elimina y devuelve el primero
+
+let verduleria = frutas.concat(verduras); // concatena dos o mas arrays
+console.log(verduleria);
+
+let busquedaInicio = verduleria.indexOf("frutilla", 3); // devuelve la posición donde esta el elemento la primera vez que aparece y busca desde el princinpio
+console.log(busquedaInicio);
+
+let busquedaFinal = verduleria.lastIndexOf("frutilla"); 
+
+let arrayNuevo = verduleria.slice(2, 6); // formar un sub array de un array, y me lo devuelve como un nuevo array
+
+verduleria.splice(2, 0, "lechuga");
+console.log(verduleria);
+
+verduleria.splice(1, 1, "pera");
+console.log(verduleria);
+
+verduleria.reverse();
+console.log(verduleria);
+
+verduleria.sort();
+console.log(verduleria);
+
+const numeros = [10, 5, 1, 59, 6, 89, 18, 9, 27, 235, 425, 38];
+console.log(numeros.sort());
+
+//[1, 10, 18, 235, 27, 38, 425, 5, 59, 6, 89, 9]
+
+numeros.sort((a, b) => a - b);
+console.log(numeros);
+
+numeros.toSorted();
+console.log(numeros);
+
+const cumpleCriterio = numeros.every(num => num %2 === 0);
+console.log(cumpleCriterio);
+
+const cumpleAlMenosUno = numeros.some(num => num %2 === 0);
+console.log(cumpleAlMenosUno);
+
+const doble = numeros.map(num => num*2);
+console.log(doble);
+
+const pares = numeros.filter(num => num %2 === 0);
+console.log(pares);
+
+const busquedaCondicion = numeros.findIndex(num => num > 25);
+console.log(busquedaCondicion);
+
+const busquedaElemento = numeros.find(num => num > 25);
+console.log(busquedaElemento);
+
+const acumulador = numeros.reduce((acumula, dato) => acumula + dato, 0);
+console.log(acumulador);
+
+const acumuladorDereIzq = numeros.reduceRight((acumula, dato) => acumula - dato, 0);
+console.log(acumuladorDereIzq);
+
+//ejercicio
+
+/*
+1- pedir nombre y apellido, notas
+2- calcular el promedio
+3- lista completa con nombre y apellido, nota1, nota2 y promedio, aprobado, desaprobado o a final.
+
+
+
+
+
 
